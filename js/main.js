@@ -1,30 +1,3 @@
-// ---------- 🌟통합 검색🌟 ----------
-//const searchEl = document.querySelector(".search");
-//const searchInputEl = document.querySelector(".search input");
-
-const searchEl = document.querySelector(".search");
-const searchInputEl = searchEl.querySelector("input");
-
-//searchEl(.search)를 click하면 함수가 실행이 될거다.
-searchEl.addEventListener("click", function () {
-  //searchInputEl(input) 요소를 focus 하겠다.
-  searchInputEl.focus();
-});
-// ▲ 자바스크립트를 통해 포커스가 가능한 대표적인 input 요소에 focus를 강제 적용해주는 명령
-
-//searchInputEl(input)에 focus가 되면 함수가 실행이 될거다. 이벤트 핸들러...
-searchInputEl.addEventListener("focus", function () {
-  //특정 요소(searchEl)에 대해 클래스 리스트 객체를 추가한 후, 해당 객체에서 focused 클래스를 추가한다.
-  searchEl.classList.add("focused"); // 포커스가 된 상태
-  //searchInputEl에 set attribute라는 메소드 실행
-  searchInputEl.setAttribute("placeholder", "통합검색");
-});
-
-searchInputEl.addEventListener("blur", function () {
-  searchEl.classList.remove("focused");
-  searchInputEl.setAttribute("placeholder", "");
-});
-
 // ---------- 🌟배지 스크롤 위치에 따라 나타났다 사라지기 & 탑버튼 실행🌟 ----------
 const badgeEl = document.querySelector("header .badges");
 const toTopEl = document.querySelector("#to-top");
@@ -182,7 +155,3 @@ spyEls.forEach(function (spyEl) {
     .setClassToggle(spyEl, "show") // 요소가 화면에 보이면 show 클래스 추가
     .addTo(new ScrollMagic.Controller()); // 컨트롤러에 장면을 할당(필수!)
 });
-
-// ---------- 🌟FOOTER YEAR COUNT🌟 ----------
-const thisYear = document.querySelector(".this-year");
-thisYear.textContent = new Date().getFullYear(); // 현재년도 숫자 표출!!
